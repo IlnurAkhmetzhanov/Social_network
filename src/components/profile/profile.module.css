@@ -1,0 +1,9 @@
+.content{
+    display: grid;
+    grid-template-rows:1fr 1fr 1fr;
+    grid-area:c;
+    border-width:5px;
+    border-color:black;
+  
+    
+  }
