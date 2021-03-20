@@ -1,0 +1,15 @@
+
+.header{
+    grid-area:h;
+    
+    padding:10px;
+    
+    }
+    .top_header{
+        padding:0 0;
+        margin:0 0;
+    background-color: blue;
+    height: 100px;
+    width:auto ;
+
+    }

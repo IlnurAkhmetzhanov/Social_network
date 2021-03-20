@@ -1,5 +1,5 @@
 import React, { component } from "react";
-
+import {NavLink} from  "react-router-dom";
 
 
 const Nav=()=>{
@@ -7,9 +7,9 @@ const Nav=()=>{
 return(
 <nav className="nav">
  <div>
-   <a href="#">  Profile</a>
+   < NavLink to="/Profile">  Profile</NavLink>
  </div>
- <div><a href="#">Message</a></div>
+ <div> <NavLink to ="/Dialogs">Dialogs</NavLink></div>
  <div>
    <a href="#" >News</a>
  </div>

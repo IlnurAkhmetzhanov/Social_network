@@ -1,6 +1,6 @@
 import React, { component } from "react";
 import s from "./profile.module.css"
-const Profile=()=>{
+const Profile=(props)=>{
     return(
         <div className={s.content}>
             <div className={s.myprofile}>My profile</div>
@@ -8,6 +8,7 @@ const Profile=()=>{
        
         <div>
             <div className={s.newpost}>New post </div>
+           <div>{props.name}</div>
           <div> post1</div>
           <div>post2</div>
         </div>
