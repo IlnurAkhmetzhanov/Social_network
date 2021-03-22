@@ -1,15 +1,23 @@
 
-.header{
-    grid-area:h;
-    
-    padding:10px;
-    
-    }
-    .top_header{
-        padding:0 0;
-        margin:0 0;
-    background-color: blue;
-    height: 100px;
-    width:auto ;
+.main_header{
 
-    }
+    background-color:blue ;
+    display:grid;
+    grid-tempalate-columns:3fr 5fr 2fr 2fr 1fr;
+}
+
+.icons{
+    display:grid;
+    grid-template-columns:1fr 1fr 1fr;
+
+}
+.icons img{
+    width: 100px;
+    height: 100px;
+}
+
+/*.icons img{
+    width:50px;
+    height: 50px;
+
+}*/
