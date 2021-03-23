@@ -1,0 +1,28 @@
+.main img{
+
+    width:250px;
+    height: 250px;
+    margin-left: 0;
+}
+.main{
+    background-color: #383838;
+    padding-left: 0px;
+
+
+}
+.profile_date{
+    background-color: #303030;
+    color:#DCDCDC   ;
+    padding-left:9px;
+}
+.navbar div{
+    margin-top:10px;
+    margin-left:5px
+}
+
+.navbar a{
+    font-size:110%;
+    color:#C0C0C0;
+    text-decoration: none;
+
+}
