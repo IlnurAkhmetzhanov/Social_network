@@ -1,6 +1,6 @@
 .main_profile{
     display: grid;
-    grid-template-rows:0.1fr 0.3fr 1fr 8fr 15fr;
+    grid-template-rows:0.1fr 0.3fr ;
 
 
 
@@ -8,14 +8,12 @@
 
 
 
-.posts h3{
-    text-align: center;
 
-}
 
 .new_post{
-    justify-self: center;
-    align-self: center;
+    //justify-self: center;
+    //align-self: center;
+    margin-left: 10px;
 
 }
 

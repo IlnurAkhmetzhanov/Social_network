@@ -1,41 +1,34 @@
-import s from "./dialogs.module.css"
-import {NavLink} from "react-router-dom";
+import React, { component } from "react";
+import s from "./Dialogs.module.css"
+import Message from "./Message/Message";
+import Message_title from "./message_title/Messgage_title";
+import Message_search from "./Message_search/Message.search";
 
-const DialogUser = (props) => {
-    return (
-
-        <NavLink to={"/dialog/" + props.id}>{props.name}</NavLink>
-    );
-
-
-}
-
-
-const Dialogs = () => {
-
-    return (
-
-        <div className={s.dialogs_main}>
-
-            <div className={s.dialogs_users}>
-                <DialogUser name="Азат" id="1"/>
-                <DialogUser name="Рушан" id="2" />
+const Dialogs=()=>{
+    return(
+            <div className={s.dialogs}>
+                <div className={s.search_title}>
+            <Message_title/>
+            <Message_search/>
+                </div>
+                <div className={s.message}>
+                <Message name="Усманов Азат" message="Привет, как дела?" />
+                <Message name="Усманов Азат" message="Привет, как дела?" />
+                    <Message name="Усманов Азат" message="Привет, как дела?" />
+                    <Message name="Усманов Азат" message="Привет, как дела?" />
+                    <Message name="Усманов Азат" message="Привет, как дела?" />
+                    <Message name="Усманов Азат" message="Привет, как дела?" />
+                    <Message name="Усманов Азат" message="Привет, как дела?" />
+                    <Message name="Усманов Азат" message="Привет, как дела?" />
+                    <Message name="Усманов Азат" message="Привет, как дела?" />
+                    <Message name="Усманов Азат" message="Привет, как дела?" />
+                    <Message name="Усманов Азат" message="Привет, как дела?" />
+                    <Message name="Усманов Азат" message="Привет, как дела?" />
+                    <Message name="Усманов Азат" message="Привет, как дела?" />
+                </div>
             </div>
 
-            <div className={s.dialogs_message}>
-                <div className={s.message}> Hi</div>
-                <div className={s.message}>Who</div>
-                <div className={s.message}>Hi</div>
-                <div className={s.message}>who</div>
-            </div>
-
-
-        </div>
-
-
-    );
-
-
+    )
 }
+
 export default Dialogs;
-

@@ -19,11 +19,14 @@ width:100%;
 
 content {
   display: grid;
-  grid-template-rows: 1fr 7fr;
+  grid-template-columns: 1fr ;
+  grid-template-rows: 1fr;
 }
 .bottom_content{
   display:grid;
   grid-template-columns:1fr 5fr  ;
+
+
 
 }
 

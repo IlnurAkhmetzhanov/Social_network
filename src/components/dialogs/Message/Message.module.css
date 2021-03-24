@@ -1,0 +1,18 @@
+.message{
+    display:grid;
+    grid-template-columns:0.5fr 3fr 0.5fr ;
+
+    background-color: silver;
+    margin-left: 4px;
+}
+.username_text{
+    display:grid;
+    grid-template-rows: 1fr 1fr;
+
+}
+.message img{
+    width: 75px;
+    height: 75px;
+    padding-top: 20px;
+    padding-left: 20px;
+}

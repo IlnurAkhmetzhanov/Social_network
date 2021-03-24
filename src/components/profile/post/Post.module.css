@@ -1,0 +1,43 @@
+.user_data{
+    display:grid;
+    grid-template-columns:0.5fr 0.5fr 9fr ;
+    margin-left: 20px;
+}
+.user_data img{
+    margin-top: 15px;
+    width: 50px;
+    height: 50px;
+}
+.post_reputation{
+    display: grid;
+    grid-template-columns:0.25fr 0.25fr 0.25fr 0.25fr 9fr ;
+
+}
+.post_reputation img{
+    margin-top: 17.5px;
+    width: 20px;
+    height: 20px;
+}
+post_reputation div{
+    border:2px solid black;
+
+}
+
+
+
+.user_post{
+    margin-left: 2px;
+    border:2px solid silver ;
+
+
+    background-color: #DCDCDC;
+}
+
+.comments_point {
+
+
+}
+
+.post_text{
+    margin-left:4px;
+}
