@@ -9,7 +9,7 @@ import Header from "./components/header/header";
 import Nav from "./components/nav/nav";
 
 
-const App = () => {
+const App = (props) => {
     return (
 
         <BrowserRouter>
@@ -20,8 +20,9 @@ const App = () => {
 
             <div className="bottom_content">
                 <Nav/>
-              <Route exact path="/Dialogs" component={Dialogs}/>
-              <Route exact path="/Profile" component={Profile}/>
+              <Route exact path="/Dialogs" render={()=><Dialogs messages_data={props.messages_data}  /> }/>
+              <Route exact path="/Profile" component={()=><Profile posts_data={props.posts_data} />}/>
+
 
 
 

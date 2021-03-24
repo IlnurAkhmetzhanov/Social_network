@@ -6,3 +6,9 @@
     display: grid;
     grid-template-rows: 1fr 1fr;
 }
+.message{
+display:grid;
+
+    grid-template-rows: repeat( auto-fit, minmax(100px, 150px) );
+    grid-row-gap:10px
+}

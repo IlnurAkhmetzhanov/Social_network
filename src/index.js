@@ -4,9 +4,14 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+let messages_data=[{name:"Усманов Рушан", message:"Халь ничек?"},{name:"Лукоянов Михаил",message:"Закрой комнату"}];
+
+let posts_data=[{name:"Малахов Владимир",post:"В Рыбушкино всегда солнечно"}];
+
+
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <App messages_data={messages_data} posts_data={posts_data} />
   </React.StrictMode>,
   document.getElementById('root')
 );

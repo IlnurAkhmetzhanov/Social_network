@@ -4,18 +4,21 @@ import Post from "./post/Post";
 import New_post from "./new_post/new_post.jsx";
 import Post_wall from "./post_wall/Post_wall.jsx";
 
-  const Profile=()=>{
-      return(
+    const Profile=(props)=>{
+
+         let posts=props.posts_data.map(el=>{
+             return <Post name={el.name} post={el.post}/>});
+
+    return(
 
           <div className={s.main}>
               <div className={s.search_new}>
                 <Post_wall/>
                 <New_post/>
+                  {posts}
               </div>
               <div className={s.posts}>
-                    <Post name="Усманов Рушан" post="В Рыбушкино всегда солнечно"/>
-                    <Post name="Усманов Рушан" post="В Рыбушкино всегда солнечно"/>
-               
+
 
               </div>
           </div>
