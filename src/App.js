@@ -20,8 +20,11 @@ const App = (props) => {
 
             <div className="bottom_content">
                 <Nav/>
-              <Route exact path="/Dialogs" render={()=><Dialogs messages_data={props.messages_data}  /> }/>
-              <Route exact path="/Profile" component={()=><Profile posts_data={props.posts_data} />}/>
+              <Route  path="/Dialogs" render={()=><Dialogs messages_data={props.data.messages_data}  /> }/>
+              <Route  path="/Profile" component={()=><Profile new_post={props.data.new_post}
+                                                              posts_data={props.data.posts_data}
+                                                              print_post={props.print_post}
+                                                              add_post={props.add_post} />}/>
 
 
 
