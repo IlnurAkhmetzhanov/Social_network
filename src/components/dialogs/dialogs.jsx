@@ -3,6 +3,7 @@ import s from "./Dialogs.module.css"
 import Message from "./Message/Message";
 import Message_title from "./message_title/Messgage_title";
 import Message_search from "./Message_search/Message.search";
+import New_message from "./new_message/new_message";
 
 const Dialogs=(props)=>{
 
@@ -18,6 +19,7 @@ const Dialogs=(props)=>{
                 <div className={s.search_title}>
             <Message_title/>
             <Message_search/>
+            <New_message new_message={props.new_message} dispatch={props.dispatch}/>
                 </div>
                 <div className={s.message}>
                   {messages}

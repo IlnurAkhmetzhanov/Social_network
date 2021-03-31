@@ -1,20 +1,22 @@
 import React, { component } from "react";
 import s from "./new_post.module.css"
-import {print_post} from "../../../redux/state";
+
 
 
 const New_post=(props)=>{
     let new_post=React.createRef();
 
     let add_new_post=()=> {
+        props.dispatch({type:"add_post"})
 
-        props.add_post();
-        print_post("")
+          props.dispatch({type:"print_post",text:""})
     }
 
 let post_change=()=>{
-    let text = new_post.current.value;
-    print_post(text);
+
+     let text = new_post.current.value;
+
+    props.dispatch({type:"print_post",text:text})
 }
 
 

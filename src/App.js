@@ -20,11 +20,13 @@ const App = (props) => {
 
             <div className="bottom_content">
                 <Nav/>
-              <Route  path="/Dialogs" render={()=><Dialogs messages_data={props.data.messages_data}  /> }/>
+              <Route  path="/Dialogs" render={()=><Dialogs dispatch={props.dispatch} messages_data={props.data.messages_data}
+              new_message={props.data.new_message}
+              /> }/>
               <Route  path="/Profile" component={()=><Profile new_post={props.data.new_post}
                                                               posts_data={props.data.posts_data}
-                                                              print_post={props.print_post}
-                                                              add_post={props.add_post} />}/>
+                                                              dispatch={props.dispatch}
+                                                               />}/>
 
 
 

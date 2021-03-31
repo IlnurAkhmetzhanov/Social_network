@@ -14,7 +14,7 @@ import Post_wall from "./post_wall/Post_wall.jsx";
           <div className={s.main}>
               <div className={s.search_new}>
                 <Post_wall/>
-                <New_post add_post={props.add_post} print_post={props.print_post} new_post={props.new_post} />
+                <New_post dispatch= {props.dispatch} new_post={props.new_post} />
                   {posts}
               </div>
               <div className={s.posts}>
