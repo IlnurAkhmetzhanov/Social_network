@@ -10,6 +10,7 @@ import Nav from "./components/nav/nav";
 
 
 const App = (props) => {
+
     return (
 
         <BrowserRouter>
@@ -20,11 +21,12 @@ const App = (props) => {
 
             <div className="bottom_content">
                 <Nav/>
-              <Route  path="/Dialogs" render={()=><Dialogs dispatch={props.dispatch} messages_data={props.data.messages_data}
-              new_message={props.data.new_message}
+
+              <Route  path="/Dialogs" render={()=><Dialogs dispatch={props.dispatch} messages_data={props.state.messages.messages_data}
+              new_message={props.state.messages.new_message}
               /> }/>
-              <Route  path="/Profile" component={()=><Profile new_post={props.data.new_post}
-                                                              posts_data={props.data.posts_data}
+              <Route  path="/Profile" component={()=><Profile new_post={props.state.posts.new_post}
+                                                              posts_data={props.state.posts.posts_data}
                                                               dispatch={props.dispatch}
                                                                />}/>
 

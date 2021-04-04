@@ -1,6 +1,7 @@
 import React, { component } from "react";
 import s from "./new_message.module.css"
-import {add_message_ActionCreator, print_message_ActionCreator} from "../../../redux/state";
+import {add_message_ActionCreator, print_message_ActionCreator} from "../../../redux/dialogsReducer";
+
 
 const New_message=(props)=>{
     let ref_new_message=React.createRef();
