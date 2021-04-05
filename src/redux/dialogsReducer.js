@@ -1,27 +1,39 @@
 import React, { component } from "react";
 let initial_state=  {
-    new_message: "Напишите сообщение",
-        messages_data: [{name: "Усманов Руш", message: "Халь ничек?"}, {
-        name: "Лукоянов Михаил",
-        message: "Закрой комнату"
-    }]}
+    new_message: "Сообщение",
+        messages_data: [{name: "Усманов Руш", message: "Халь ничек?"}]}
 
 
 export let dialogsReducer=(state=initial_state,action)=>{
 
-    if (action.type === "print_message") {
-        state.new_message = action.text;
 
 
-    }
-    else if (action.type === "add_message") {
+ if (action.type === "add_message") {
+
+
         let message = {
             name: "Зайцев Георгий",
             message: state.new_message
         };
-        state.messages_data.push(message);
 
+        return {
+            ...state,
+
+            messages_data:[...state.messages_data,message]
+
+
+        };
     }
+
+    else if (action.type === "print_message") {
+
+
+     return{
+         ...state,
+         new_message: action.text
+     };
+    }
+
     return state;
 }
 export const add_message_ActionCreator= ()=>({type:"add_message"});

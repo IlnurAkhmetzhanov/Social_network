@@ -4,6 +4,8 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import store from "./redux/store_redux.js";
+import {BrowserRouter} from "react-router-dom";
+import {Provider} from "react-redux";
 
 
 
@@ -12,28 +14,24 @@ import store from "./redux/store_redux.js";
 
 
 
- let rerender=(state)=>
-
-{
 
 
     ReactDOM.render(
-        <React.StrictMode>
-            <App state={state} dispatch={store.dispatch.bind(store)}
 
-            />
-        </React.StrictMode>,
+        <React.StrictMode>
+           <Provider store={store}>
+            <App />
+
+           </Provider>
+        </React.StrictMode>
+      ,
         document.getElementById('root')
     );
-}
-
- rerender(store.getState());
 
 
-store.subscribe(() => {
-    let state = store.getState();
-    rerender(state);
-});
+
+
+
 
 
 reportWebVitals();

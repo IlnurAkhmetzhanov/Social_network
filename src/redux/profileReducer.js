@@ -13,11 +13,18 @@ export let profileReducer=(state=initial_state,action)=>{
             post: state.new_post
         };
         state.posts_data.push(post);
+        return{
+            ...state,
+            posts_data:[...state.posts_data]
+        }
 
     }
     else if (action.type === "print_post") {
         state.new_post = action.text;
-
+        return{
+            ...state,
+            new_post:state.new_post
+        }
     }
     return state;
 }

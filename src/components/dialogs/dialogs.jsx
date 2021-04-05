@@ -3,11 +3,11 @@ import s from "./Dialogs.module.css"
 import Message from "./Message/Message";
 import Message_title from "./message_title/Messgage_title";
 import Message_search from "./Message_search/Message.search";
-import New_message from "./new_message/new_message";
+import New_message_container from "./new_message/new_message_container";
 
 const Dialogs=(props)=>{
 
-    let messages=props.messages_data.map(el=>{
+    let messages=props.messages.messages_data.map(el=>{
         return <Message name={el.name} message={el.message}/>
     })
 
@@ -19,7 +19,8 @@ const Dialogs=(props)=>{
                 <div className={s.search_title}>
             <Message_title/>
             <Message_search/>
-            <New_message new_message={props.new_message} dispatch={props.dispatch}/>
+
+                    <New_message_container  />
                 </div>
                 <div className={s.message}>
                   {messages}
@@ -30,5 +31,6 @@ const Dialogs=(props)=>{
 
     )
 }
+
 
 export default Dialogs;
