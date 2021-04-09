@@ -17,7 +17,7 @@ return(
     <div className={s.navbar}>
         <div className={s.profile}><NavLink to="/Profile">Profile</NavLink></div>
         <div className={s.message}><NavLink to="/Dialogs">Dialogs</NavLink></div>
-        <div className={s.friends}><a href="#">Friends</a></div>
+        <div className={s.users}><NavLink to="/Users">Users</NavLink ></div>
         <div className={s.news}><a href="#">News</a></div>
         <div className={s.music}><a href="#">Music</a></div>
     </div>
