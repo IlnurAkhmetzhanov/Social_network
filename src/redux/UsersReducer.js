@@ -13,7 +13,7 @@ let initial_state= {
     users_data:[],
     current_page:1,
     users_page:3,
-    users_count:17
+    total_users:19
 
 }
 
@@ -25,54 +25,60 @@ export let UsersReducer=(state=initial_state,action)=> {
             users_data: state.users_data.map(el => {
                 if (el.id === action.id) {
 
-                    return{...el,followed:true}
+                    return {...el, followed: true}
 
 
                 }
-                return{...el}
+                return {...el}
 
             })
         }
     } else if (action.type === "unfollow") {
         return {
             ...state,
-            users_data:state.users_data.map(el => {
+            users_data: state.users_data.map(el => {
                 if (el.id === action.id) {
-                    return{...el,followed:false}
+                    return {...el, followed: false}
                 }
 
-                return{...el}
+                return {...el}
             })
         }
-    }
-    else if(action.type==="set_users"){
+    } else if (action.type === "set_users") {
 
 
-        return(
-        { ...state,
-            users_data:[...action.users_data]}
+        return (
+            {
+                ...state,
+                users_data: [...action.users_data]
+            }
 
 
-    // ...state.users_data,
+            // ...state.users_data,
         )
-    }
-    else if(action==="set_current_page"){
-        return(
+    } else if (action.type === "set_current_page") {
+
+        return (
             {
                 ...state,
                 current_page: action.current_page
-
             }
         )
-
     }
 
-    return state;
 
+
+
+
+else if(action.type==="set_total_users"){
+
+    return({...state,total_users:action.total_users})
 
 }
+    return state;}
 
 export const follow_ActionCreator= (id)=>({type:"follow",id:id});
 export const unfollow_ActionCreator= (id)=>({type:"unfollow",id:id});
 export const set_users_ActionCreator= (users_data)=>({type:"set_users",users_data:users_data});
 export const set_current_page=(current_page)=>({type:"set_current_page",current_page})
+export const set_total_users=(total_users)=>({type:"set_total_users",total_users})

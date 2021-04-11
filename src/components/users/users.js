@@ -6,30 +6,48 @@ export  class Users extends React.Component{
 
     componentDidMount() {
 
-        axios.get("https://social-network.samuraijs.com/api/1.0/users").then(response=>{
+        axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.current_page}&count=${this.props.users_page}`).then(response=>{
+
+            this.props.set_users(response.data.items)
+              // this.props.set_total_users(response.data.totalCount)
+
+
+        })
+    }
+    set_page_server=(page)=>{
+        this.props.set_current_page(page)
+        axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.current_page}`).then(response=>{
 
             this.props.set_users(response.data.items)
 
 
         })
+
     }
 
+
     render=()=>{
+
         let pages=[]
-        for(let i=1;i<=Math.ceil(this.props.users_count/this.props.users_page);i++){
-            pages.push(i)
+        for(let i=1;i<=Math.ceil(this.props.total_users/this.props.users_page);i++){
+
+            pages.push(i);
 
         }
 
 
-
         return(<div>
             <div>
+
             {
-                pages.map(el=>{return<span className={s.pages_count} onclick={this.props.set_current_page(el)} >{el}</span>})
-                    
+                pages.map(el=>{return<button className={this.props.current_page===el&& s.pages_count} onClick={()=>{this.set_page_server(el) }} >{el}</button>})
+
             }
+
+
+
             </div>
+
 
             {
 
