@@ -13,5 +13,14 @@
     font-size: 15px;
     font-weight: bold;
 }
-
+.preloader img{
+ width: 150px;
+height: 100px;
+}
+.pages_navigation{
+    display:grid;
+    grid-template-columns: 2fr 2fr;
+    justify-content: center;
+    align-items: center;
+}
 

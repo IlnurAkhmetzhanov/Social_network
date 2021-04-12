@@ -17,7 +17,7 @@ import {Provider} from "react-redux";
 
 
     ReactDOM.render(
-        <BrowserRouter>
+
         <React.StrictMode>
 
            <Provider store={store}>
@@ -25,7 +25,7 @@ import {Provider} from "react-redux";
 
            </Provider>
         </React.StrictMode>
-</BrowserRouter>
+
       ,
         document.getElementById('root')
     );

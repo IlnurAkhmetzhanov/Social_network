@@ -28,7 +28,7 @@ export const User=(props)=>{
    <div className={s.header}>
          <h1>Список пользователей</h1>
          </div>
-          <div className={s.users.js}>
+          <div className={s.UsersApiComponent.js}>
 
          </div>
 

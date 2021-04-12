@@ -9,8 +9,8 @@ import Header from "./components/header/header";
 import Nav from "./components/nav/nav";
 import Dialogs_container from "./components/dialogs/Dialogs_container";
 import Profile_container from "./components/profile/Profile_container";
-import {Users_container} from "./components/users/users_container.js";
-import {Users} from "./components/users/users_container";
+import {Users_container} from "./components/users/users_container.jsx";
+
 
 
 const App = (props) => {

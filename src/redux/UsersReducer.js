@@ -13,72 +13,87 @@ let initial_state= {
     users_data:[],
     current_page:1,
     users_page:3,
-    total_users:19
+    total_users:19,
+    receive_status:true
 
 }
 
 export let UsersReducer=(state=initial_state,action)=> {
-
-    if (action.type === "follow") {
-        return {
-            ...state,
-            users_data: state.users_data.map(el => {
-                if (el.id === action.id) {
-
-                    return {...el, followed: true}
-
-
-                }
-                return {...el}
-
-            })
-        }
-    } else if (action.type === "unfollow") {
-        return {
-            ...state,
-            users_data: state.users_data.map(el => {
-                if (el.id === action.id) {
-                    return {...el, followed: false}
-                }
-
-                return {...el}
-            })
-        }
-    } else if (action.type === "set_users") {
-
-
-        return (
-            {
+    switch (action.type) {
+        case "follow":
+            return {
                 ...state,
-                users_data: [...action.users_data]
+                users_data: state.users_data.map(el => {
+                    if (el.id === action.id) {
+
+                        return {...el, followed: true}
+
+
+                    }
+                    return {...el}
+
+                })
+            }
+        case "unfollow":
+            return {
+                ...state,
+                users_data: state.users_data.map(el => {
+                    if (el.id === action.id) {
+                        return {...el, followed: false}
+                    }
+
+                    return {...el}
+                })
             }
 
+        case "set_users":
+            return (
+                {
+                    ...state,
+                    users_data: [...action.users_data]
+                }
+            )
 
-            // ...state.users_data,
-        )
-    } else if (action.type === "set_current_page") {
+        case "set_current_page":
+            return (
+                {
+                    ...state,
+                    current_page: action.current_page
+                }
+            )
 
-        return (
-            {
-                ...state,
-                current_page: action.current_page
+        case "set_total_users":
+            return ({...state, total_users: action.total_users})
+
+        case "set_receive_status":
+            return {
+                ...state, receive_status: action.receive_status
             }
-        )
+        default:
+            return state;
     }
-
-
-
-
-
-else if(action.type==="set_total_users"){
-
-    return({...state,total_users:action.total_users})
-
 }
-    return state;}
 
-export const follow_ActionCreator= (id)=>({type:"follow",id:id});
-export const unfollow_ActionCreator= (id)=>({type:"unfollow",id:id});
-export const set_users_ActionCreator= (users_data)=>({type:"set_users",users_data:users_data});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+export const follow= (id)=>({type:"follow",id:id});
+export const unfollow= (id)=>({type:"unfollow",id:id});
+export const set_users = (users_data)=>({type:"set_users",users_data:users_data});
 export const set_current_page=(current_page)=>({type:"set_current_page",current_page})
 export const set_total_users=(total_users)=>({type:"set_total_users",total_users})
+export const set_receive_status=(receive_status)=>({type:"set_receive_status",receive_status})
+
