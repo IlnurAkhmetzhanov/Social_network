@@ -4,28 +4,37 @@ import Post from "./post/Post";
 
 import Post_wall from "./post_wall/Post_wall.jsx";
 import New_post_container from "./new_post/new_post_container";
+import {Preloader} from "../users/preloader";
 
 
 
     const Profile=(props)=>{
-
+if(!props.profile_data){
+    return(
+        <Preloader/>
+    )
+}
          // let state=props.posts;
 
-         let posts=props.posts.posts_data.map(el=>{
-             return <Post name={el.name} post={el.post}/>});
+         // let posts=props.posts.posts_data.map(el=>{
+         //     return <Post name={el.name} post={el.post}/>});
 
     return(
 
           <div className={s.main}>
-              <div className={s.search_new}>
-                <Post_wall/>
-                <New_post_container  />
-                  {posts}
+              <div className={s.user}>
+                  <div className={s.photo}><img src={props.profile_data.photos.large}/></div>
+                  <div className={s.user_inf}>
+                    <div className={s.name}><h2>{props.profile_data.fullName}</h2></div>
+                      <div className={s.status}>О себе: {props.profile_data.aboutMe}</div>
+                      <div className={s.facebook}><h4>facebook:{props.profile_data.contacts.facebook}</h4></div>
+                      <div className={s.facebook}><h4>Вконтакте:{props.profile_data.contacts.vk}</h4></div>
+                      <div className={s.joob} >Статус занятости: {props.profile_data.lookingForAJob?"Ищет работу":"Не ищет работу"}  </div>
+                      <div className={s.city}></div>
+                  </div>
               </div>
-              <div className={s.posts}>
 
 
-              </div>
           </div>
       )
 

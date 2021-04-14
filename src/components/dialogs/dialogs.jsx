@@ -1,5 +1,5 @@
 import React, { component } from "react";
-import s from "./Dialogs.module.css"
+import s from "./dialogs.module.css"
 import Message from "./Message/Message";
 import Message_title from "./message_title/Messgage_title";
 import Message_search from "./Message_search/Message.search";

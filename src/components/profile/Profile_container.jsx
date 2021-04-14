@@ -6,44 +6,42 @@ import Post_wall from "./post_wall/Post_wall.jsx";
 import New_post_container from "./new_post/new_post_container";
 import {connect} from "react-redux";
 import Profile from "./Profile";
+import {set_profile_data} from "../../redux/profileReducer";
+import * as axios from "axios"
+
+class ProfileApi extends React.Component {
+
+    componentDidMount() {
+        axios.get("https://social-network.samuraijs.com/api/1.0/profile/2").then(response => {
+            this.props.set_profile_data(response.data)
+
+        })
 
 
-  //   const Profile=(props)=>{
-  //        //let state=props.posts;
-  //        let posts=state.posts_data.map(el=>{
-  //            return <Post name={el.name} post={el.post}/>});
-  //
-  //   return(
-  //
-  //         <div className={s.main}>
-  //             <div className={s.search_new}>
-  //               <Post_wall/>
-  //               <New_post_container  />
-  //                 {/*{posts}*/}
-  //             </div>
-  //             <div className={s.posts}>
-  //
-  //
-  //             </div>
-  //         </div>
-  //     )
-  //
-  // }
+    }
+
+    render() {
+        return(
+        <Profile profile_data={this.props.profile_data}/>
+        )
+    }
+
+
+}
+
+
+
+
+
 let mapStateToProps=(state)=>{
     return(
         {
-            posts:state.posts
+            profile_data:state.posts.profile_data
         }
     )
 }
-// let mapDispatchToProps=(dispatch)=>{
-//     return(
-//         {
-//
-//         }
-//     )
-// }
 
-  const Profile_container=connect(mapStateToProps)(Profile)
+
+  const Profile_container=connect(mapStateToProps,{set_profile_data})(ProfileApi)
 
   export default Profile_container;

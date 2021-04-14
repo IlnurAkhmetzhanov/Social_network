@@ -1,11 +1,12 @@
 import React, { component } from "react";
-import s from "./Dialogs.module.css"
+
 import Message from "./Message/Message";
 import Message_title from "./message_title/Messgage_title";
 import Message_search from "./Message_search/Message.search";
 import New_message_container from "./new_message/new_message_container";
 import {connect} from "react-redux";
-import Dialogs from "./Dialogs";
+import Dialogs from "./dialogs";
+
 
 
 // const Dialogs=(props)=>{
