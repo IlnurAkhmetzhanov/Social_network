@@ -27,7 +27,7 @@ const App = (props) => {
                 <Nav/>
 
               <Route  path="/Dialogs" render={()=><Dialogs_container/> }/>
-              <Route  path="/Profile" render={()=><Profile_container/>}/>
+              <Route  path="/Profile/:userId" render={()=><Profile_container/>}/>
                 <Route  path="/Users" render={()=><Users_container/>}/>
 
 

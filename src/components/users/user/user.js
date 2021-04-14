@@ -4,9 +4,11 @@ import s from "./user.module.css"
 export const User=(props)=>{
     return(
         <div className={s.main} >
+
             <div className={s.logo}>
                 {props.photo}
             </div>
+
             <div className={s.user_inf}>
                 <h2>props.fullname</h2>ы
                 <h3>props.city</h3>

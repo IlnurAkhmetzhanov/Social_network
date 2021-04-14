@@ -1,7 +1,7 @@
 import React, { component } from "react";
 import s from "./users.module.css";
 import {Preloader} from "./preloader";
-
+import {NavLink} from  "react-router-dom";
 export const Users=(props)=>{
 
     let pages=[]
@@ -39,7 +39,7 @@ export const Users=(props)=>{
 
             props.users.map(el=> <div className={s.main} >
                 <div className={s.logo}>
-                    <img src={el.photos.small?el.photos.small:"https://maxcdn.icons8.com/Share/icon/ultraviolet/Users/administrator1600.png"}/>
+                  <NavLink to={`/Profile/${el.id}`} > <img src={el.photos.small?el.photos.small:"https://maxcdn.icons8.com/Share/icon/ultraviolet/Users/administrator1600.png"}/></NavLink>
                 </div>
                 <div className={s.user_inf}>
                     <h2>{el.name}</h2>
