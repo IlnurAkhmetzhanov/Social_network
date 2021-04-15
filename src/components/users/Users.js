@@ -2,6 +2,8 @@ import React, { component } from "react";
 import s from "./users.module.css";
 import {Preloader} from "./preloader";
 import {NavLink} from  "react-router-dom";
+import * as axios from "axios"
+import {API} from "../api/api";
 export const Users=(props)=>{
 
     let pages=[]
@@ -48,9 +50,30 @@ export const Users=(props)=>{
                 <div className={s.button}>
                     {
                         (el.followed)
-                            ? <button onClick={()=>{props.unfollow(el.id)}} >Удалить</button>
+                            ? <button onClick={()=>{
+                               API.unfollow_user(el.id).then(data=>{
 
-                            :<button onClick={()=>{props.follow(el.id)}} >Добавить</button>
+                                    if(data.resultCode==0){props.unfollow(el.id)}
+                                })
+
+
+
+                            }} >Удалить</button>
+
+                            :<button onClick={()=>
+                            {
+
+                                API.follow_user(el.id).then(data=>{
+
+                                    if(data.resultCode==0){props.follow(el.id)}
+                                })
+
+
+
+
+
+
+                            }} >Добавить</button>
                     }
                 </div>
             </div>)}

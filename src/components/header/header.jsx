@@ -1,6 +1,10 @@
 import React, { component } from "react";
 import s from "./header.module.css"
-const Header=()=>{
+import {Preloader} from "../users/preloader";
+const Header=(props)=>{
+
+
+
 return(
 <div className = {s.main_header}>
     <div className={s.name}><h1>#В_МАЕВНИКЕ</h1></div>
@@ -11,9 +15,9 @@ return(
     </div>
 <div className={s.search}> <input type = "text"  name = "firstname"  value =  "Поиск"/> </div>
 <div className= {s.profile_panels}><h1>Усманов Азат</h1></div>
-<div className={s.profile_icon}><img src="https://static.thenounproject.com/png/3144376-200.png"/> </div>
+<div className={s.profile_icon}>{props.login.auth_status?<img src="https://static.thenounproject.com/png/3144376-200.png"/>:<a>Login</a>} </div>
 
-
+    {/**/}
 </div>
 
 )

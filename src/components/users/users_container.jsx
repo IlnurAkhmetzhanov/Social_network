@@ -10,6 +10,7 @@ import {
     set_current_page,
     set_receive_status
 } from "../../redux/UsersReducer";
+import {API, get_user} from "../api/api";
 
 
 
@@ -18,9 +19,9 @@ import {
 
     componentDidMount=()=> {
          this.props.set_receive_status(true);
-        axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.current_page}&count=${this.props.users_page}`).then(response=>{
+        API.get_user(this.props.current_page,this.props.users_page).then(data=>{
 
-            this.props.set_users(response.data.items)
+            this.props.set_users(data.items)
               this.props.set_receive_status(false);
             // this.props.set_total_users(response.data.totalCount)
 
@@ -31,9 +32,9 @@ import {
         this.props.set_current_page(page)
          this.props.set_receive_status(true);
 
-        axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.current_page}`).then(response=>{
+        API.get_user(page,this.props.users_page).then(data=>{
 
-            this.props.set_users(response.data.items)
+            this.props.set_users(data.items)
             this.props.set_receive_status(false);
 
 

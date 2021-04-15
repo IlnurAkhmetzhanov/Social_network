@@ -10,6 +10,7 @@ import Nav from "./components/nav/nav";
 import Dialogs_container from "./components/dialogs/Dialogs_container";
 import Profile_container from "./components/profile/Profile_container";
 import {Users_container} from "./components/users/users_container.jsx";
+import {Header_container} from "./components/header/header_container";
 
 
 
@@ -19,7 +20,7 @@ const App = (props) => {
 
         <BrowserRouter>
             <div className="content">
-                <Header/>
+                <Header_container/>
 
 
 

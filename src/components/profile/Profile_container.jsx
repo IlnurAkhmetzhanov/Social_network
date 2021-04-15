@@ -13,7 +13,7 @@ import {withRouter} from "react-router-dom"
 class ProfileApi extends React.Component {
 
     componentDidMount() {
-        debugger
+
         let userId=this.props.match.params.userId;
 
         axios.get("https://social-network.samuraijs.com/api/1.0/profile/"+userId).then(response => {
@@ -26,6 +26,7 @@ class ProfileApi extends React.Component {
 
     render() {
         return(
+
         <Profile profile_data={this.props.profile_data}/>
         )
     }
