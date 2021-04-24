@@ -6,7 +6,8 @@ import Message_search from "./Message_search/Message.search";
 import New_message_container from "./new_message/new_message_container";
 import {connect} from "react-redux";
 import Dialogs from "./dialogs";
-
+import {withAuthRedirect} from "../hoc/hoc";
+import {compose} from "redux"
 
 
 // const Dialogs=(props)=>{
@@ -47,6 +48,7 @@ let mapStateToProps=(state)=>{
     return(
         {
           messages:state.messages,
+            auth_status: state.login.auth_status
 
 
 
@@ -60,7 +62,7 @@ let mapStateToProps=(state)=>{
 
 
 
+// let withDialogsComponent=withAuthRedirect(Dialogs)
+// export const Dialogs_container=connect(mapStateToProps,mapDispatchToProps)(withDialogsComponent)
 
-const Dialogs_container=connect(mapStateToProps,mapDispatchToProps)(Dialogs)
-
-export default Dialogs_container;
+  export default compose(connect(mapStateToProps,mapDispatchToProps),withAuthRedirect)(Dialogs)

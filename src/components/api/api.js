@@ -37,6 +37,13 @@ export let API={
         return instance.delete(`follow/${id}`).then(response=>{
             return response.data
         })
+    },
+    auth_user(){
+
+        return instance.get("auth/me").then(response=>{
+            return response.data
+        })
+
     }
 
 }

@@ -9,7 +9,7 @@ import Profile from "./Profile";
 import {set_profile_data} from "../../redux/profileReducer";
 import * as axios from "axios"
 import {withRouter} from "react-router-dom"
-
+import {compose} from "redux"
 class ProfileApi extends React.Component {
 
     componentDidMount() {
@@ -27,7 +27,7 @@ class ProfileApi extends React.Component {
     render() {
         return(
 
-        <Profile profile_data={this.props.profile_data}/>
+        <Profile profile_data={this.props.profile_data} auth_status={this.props.auth_status}/>
         )
     }
 
@@ -41,12 +41,14 @@ class ProfileApi extends React.Component {
 let mapStateToProps=(state)=>{
     return(
         {
-            profile_data:state.posts.profile_data
+            profile_data:state.posts.profile_data,
+            auth_status: state.login.auth_status
         }
     )
 }
 
-let Profile_rout= withRouter(ProfileApi);
-  const Profile_container=connect(mapStateToProps,{set_profile_data})(Profile_rout)
-
-  export default Profile_container;
+// let Profile_rout= withRouter(ProfileApi);
+//   const Profile_container=connect(mapStateToProps,{set_profile_data})(Profile_rout)
+//
+//   export default Profile_container;
+export default compose(connect(mapStateToProps,{set_profile_data}),withRouter)(ProfileApi)

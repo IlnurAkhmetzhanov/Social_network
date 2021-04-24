@@ -4,7 +4,7 @@ import Message from "./Message/Message";
 import Message_title from "./message_title/Messgage_title";
 import Message_search from "./Message_search/Message.search";
 import New_message_container from "./new_message/new_message_container";
-
+import {Redirect} from "react-router-dom"
 const Dialogs=(props)=>{
 
     let messages=props.messages.messages_data.map(el=>{

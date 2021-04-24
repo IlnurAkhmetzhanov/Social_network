@@ -9,6 +9,7 @@ import {Preloader} from "../users/preloader";
 
 
     const Profile=(props)=>{
+
 if(!props.profile_data){
     return(
         <Preloader/>
@@ -18,6 +19,8 @@ if(!props.profile_data){
 
          // let posts=props.posts.posts_data.map(el=>{
          //     return <Post name={el.name} post={el.post}/>});
+// if(props.auth_status===false){ return <Redirect to="/Login"/>}
+
 
     return(
 
