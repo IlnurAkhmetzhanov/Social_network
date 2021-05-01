@@ -5,12 +5,14 @@ import Post from "./post/Post";
 import Post_wall from "./post_wall/Post_wall.jsx";
 import New_post_container from "./new_post/new_post_container";
 import {Preloader} from "../users/preloader";
+import {Status} from "./status/status.jsx";
 
 
 
     const Profile=(props)=>{
 
-if(!props.profile_data){
+if(!props.profile_data ){
+
     return(
         <Preloader/>
     )
@@ -25,10 +27,13 @@ if(!props.profile_data){
     return(
 
           <div className={s.main}>
+
               <div className={s.user}>
                   <div className={s.photo}><img src={props.profile_data.photos.large}/></div>
+
                   <div className={s.user_inf}>
                     <div className={s.name}><h2>{props.profile_data.fullName}</h2></div>
+                      <Status status={props.status} updateStatus={props.updateStatus} />
                       <div className={s.status}>О себе: {props.profile_data.aboutMe}</div>
                       <div className={s.facebook}><h4>facebook:{props.profile_data.contacts.facebook}</h4></div>
                       <div className={s.facebook}><h4>Вконтакте:{props.profile_data.contacts.vk}</h4></div>
