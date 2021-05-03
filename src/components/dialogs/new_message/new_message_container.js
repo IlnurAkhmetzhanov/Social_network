@@ -5,6 +5,7 @@ import {add_message_ActionCreator, print_message_ActionCreator} from "../../../r
 import {connect} from "react-redux";
 import {add_post_ActionCreator, print_post_ActionCreator} from "../../../redux/profileReducer";
 import New_message from "./new_message";
+import messageForm from "./new_message";
 
 // const New_message_container=(props)=>{
 //      let ref_new_message=React.createRef();
@@ -34,8 +35,8 @@ import New_message from "./new_message";
 const mapDispatchToProps=(dispatch)=>{
     return (
         {
-            print_message:(text)=>dispatch(print_message_ActionCreator(text)),
-            add_message:()=>dispatch(add_message_ActionCreator())
+
+            onSubmit:(message)=>dispatch(add_message_ActionCreator(message))
 
         }
     )
@@ -52,7 +53,7 @@ const mapDispatchToProps=(dispatch)=>{
 
     }
 
-    const New_message_container=connect(mapStateToProps,mapDispatchToProps)(New_message)
+    const New_message_container=connect(mapStateToProps,mapDispatchToProps)(messageForm)
 
 
 export default New_message_container;

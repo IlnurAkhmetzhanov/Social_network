@@ -15,7 +15,7 @@ export let profileReducer=(state=initial_state,action)=>{
        case"add_post":
         let post = {
             name: "Усманов Рушан",
-            post: state.new_post
+            post: action.post
         };
         state.posts_data.push(post);
         return{
@@ -46,7 +46,7 @@ export let profileReducer=(state=initial_state,action)=>{
     return state;
 }
 
-export const add_post_ActionCreator= ()=>({type:"add_post"});
+export const add_post_ActionCreator= (post)=>({type:"add_post",post});
 export const print_post_ActionCreator=(text)=>({type:"print_post",text:text})
 export const set_profile_data=(profile_data)=>({type:"set_profile_data",profile_data})
 export const setStatus=(status)=>({type:"setStatus",status})

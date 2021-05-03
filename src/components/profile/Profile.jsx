@@ -3,9 +3,13 @@ import s from "./profile.module.css"
 import Post from "./post/Post";
 
 import Post_wall from "./post_wall/Post_wall.jsx";
-import New_post_container from "./new_post/new_post_container";
+
 import {Preloader} from "../users/preloader";
 import {Status} from "./status/status.jsx";
+import {Redirect} from "react-router-dom"
+
+import newPostForm from "./new_post/new_post";
+import New_post_container from "./new_post/new_post_container";
 
 
 
@@ -17,11 +21,13 @@ if(!props.profile_data ){
         <Preloader/>
     )
 }
-         // let state=props.posts;
+          let state=props.posts;
 
-         // let posts=props.posts.posts_data.map(el=>{
-         //     return <Post name={el.name} post={el.post}/>});
-// if(props.auth_status===false){ return <Redirect to="/Login"/>}
+         let posts=state.map(el=>{
+              return <Post name={el.name} post={el.post}/>});
+ if(props.auth_status===false){ return <Redirect to="/Login"/>}
+
+
 
 
     return(
@@ -40,8 +46,9 @@ if(!props.profile_data ){
                       <div className={s.joob} >Статус занятости: {props.profile_data.lookingForAJob?"Ищет работу":"Не ищет работу"}  </div>
                       <div className={s.city}></div>
                   </div>
-              </div>
+                  <div>{posts}<New_post_container/> </div>
 
+              </div>
 
           </div>
       )

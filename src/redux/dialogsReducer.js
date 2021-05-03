@@ -13,7 +13,7 @@ export let dialogsReducer=(state=initial_state,action)=>{
 
         let message = {
             name: "Зайцев Георгий",
-            message: state.new_message
+            message: action.message
         };
 
         return {
@@ -36,5 +36,5 @@ export let dialogsReducer=(state=initial_state,action)=>{
 
     return state;
 }
-export const add_message_ActionCreator= ()=>({type:"add_message"});
+export const add_message_ActionCreator= (message)=>({type:"add_message",message});
 export const print_message_ActionCreator=(text)=>({type:"print_message",text:text})

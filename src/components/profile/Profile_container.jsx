@@ -28,7 +28,7 @@ class ProfileClass extends React.Component {
         return(
 
         <Profile profile_data={this.props.profile_data} auth_status={this.props.auth_status} loadingStatus={this.props.loadingStatus}
-        status={this.props.status} updateStatus={this.props.updateStatus}
+        status={this.props.status} updateStatus={this.props.updateStatus} posts={this.props.posts}
         />
         )
     }
@@ -41,11 +41,13 @@ class ProfileClass extends React.Component {
 
 
 let mapStateToProps=(state)=>{
+
     return(
         {
             profile_data:state.posts.profile_data,
             auth_status: state.login.auth_status,
-            status:state.posts.status
+            status:state.posts.status,
+            posts:state.posts.posts_data
         }
     )
 }
